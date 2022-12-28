@@ -7,6 +7,13 @@ const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
 
+router.get("/init", async (req, res) => {
+    res.send({
+        success: true
+    })
+})
+
+
 /* hash */
 router.post("/encryptstr", async (req, res) => {
     const { str } = req.body;
