@@ -9,7 +9,7 @@ const saltRounds = 10;
 
 router.get("/init", async (req, res) => {
     res.send({
-        success: true
+        Standby : true
     })
 })
 

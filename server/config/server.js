@@ -1,3 +1,4 @@
+const http = require("http");
 const express = require("express");
 const bodyparser = require("body-parser");
 const cookieParser = require("cookie-parser");
@@ -18,10 +19,9 @@ const initiateHttpServer = (port) => {
         /* ROUTER (CONTROLLER) DECLARATION */
         app.use("/api/test", TestController)
 
-        
-        app.listen(port, () => {
+               
+        http.createServer(app).listen(port);
         console.log(`>>> Server listening on ${port}\n`);
-        });
         resolve();
     })
 }

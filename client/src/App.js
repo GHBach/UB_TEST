@@ -1,23 +1,30 @@
-import './App.css';
-import axios from 'axios';
-import { useEffect } from 'react';
+import React from 'react'
+import{
+    BrowserRouter as Router,
+    Route,
+    Routes
+  } from "react-router-dom"
 
-function App() {
-  const callAPI = async () => {
-    axios.get('/api').then ((res) => {
-      console.log('result',res.data);
-    })
-  }
+import UB_Web_Test from  './Pages/UB_Web_Test'
 
-  useEffect(() => {
-    callAPI()
-  },[])
 
+function App(){
+  let url = window.location.protocol + "//" + window.location.host
+  console.log(url);
+  
   return (
-    <div className="App">
-      TEST
-    </div>
-  );
+    <Router>
+      <div>
+        <Routes>
+          <Route exact path="/" element={<UB_Web_Test />} />
+          <Route exact path="/test" element={<UB_Web_Test />} />
+        </Routes>
+      </div>
+    </Router>
+  )
+
 }
 
-export default App;
+
+
+export default App

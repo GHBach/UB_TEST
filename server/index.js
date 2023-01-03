@@ -4,7 +4,7 @@ const httpServer = require("./config/server");
 const runServer = async () => {
     try {
         
-        await httpServer(process.env.PORT || 5000);
+        await httpServer(process.env.PORT || 30002);
     } catch (err) {
         throw err;
     }
